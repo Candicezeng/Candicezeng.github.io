@@ -1,0 +1,770 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,Command Line," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="sys.argv的用法sys.argv[]的作用是获取命令行的参数，sys.argv[0]代表的是文件本身的路径。从sys.argv[1]开始是文件执行的参数。废话不多说，先上例子。使用sys.argv的例子：在此，我建立一个test.py的Python文件，内容如下：
+[Python]import sysprint ‘Number of arguments:’, len(sys.argv), ‘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sys.argv及getopt在Python中的用法">
+<meta property="og:url" content="http://yoursite.com/2016/10/16/sys-argv及getopt在Python中的用法/index.html">
+<meta property="og:site_name" content="Candice">
+<meta property="og:description" content="sys.argv的用法sys.argv[]的作用是获取命令行的参数，sys.argv[0]代表的是文件本身的路径。从sys.argv[1]开始是文件执行的参数。废话不多说，先上例子。使用sys.argv的例子：在此，我建立一个test.py的Python文件，内容如下：
+[Python]import sysprint ‘Number of arguments:’, len(sys.argv), ‘">
+<meta property="og:updated_time" content="2016-10-18T02:43:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sys.argv及getopt在Python中的用法">
+<meta name="twitter:description" content="sys.argv的用法sys.argv[]的作用是获取命令行的参数，sys.argv[0]代表的是文件本身的路径。从sys.argv[1]开始是文件执行的参数。废话不多说，先上例子。使用sys.argv的例子：在此，我建立一个test.py的Python文件，内容如下：
+[Python]import sysprint ‘Number of arguments:’, len(sys.argv), ‘">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6331811397298554000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/16/sys-argv及getopt在Python中的用法/"/>
+
+  <title> sys.argv及getopt在Python中的用法 | Candice </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Candice</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Keep fighting, Candice!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                sys.argv及getopt在Python中的用法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-16T23:12:32+08:00" content="2016-10-16">
+              2016-10-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/16/sys-argv及getopt在Python中的用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/16/sys-argv及getopt在Python中的用法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="sys-argv的用法"><a href="#sys-argv的用法" class="headerlink" title="sys.argv的用法"></a>sys.argv的用法</h1><p>sys.argv[]的作用是获取命令行的参数，sys.argv[0]代表的是文件本身的路径。从sys.argv[1]开始是文件执行的参数。废话不多说，先上例子。<br>使用sys.argv的例子：<br>在此，我建立一个test.py的Python文件，内容如下：</p>
+<p><pre><code>[Python]<br>import sys<br>print ‘Number of arguments:’, len(sys.argv), ‘arguments.’<br>print ‘Argument List:’,str(sys.argv)<br></code></pre><br>现在我们在terminal中运行test.py.在terminal中输入：</p>
+<p><pre><code>python test.py arg1 arg2 arg3</code></pre><br>这样我们会得到：</p>
+<p><pre><code>Number of arguments:4 arguments.<br>Argument List: [‘test.py’,’arg1’, ‘arg2’, ‘arg3’]</code></pre><br>这里的四个arguments分别是：test.py, arg1,arg2,arg3。其中test.py为sys.argv[0],arg1为sys.argv[1]，以此类推。那么这样的参数有什么作用呢？在接下来的getopt中会体现出其作用。<br><a id="more"></a></p>
+<h1 id="getopt用法"><a href="#getopt用法" class="headerlink" title="getopt用法"></a>getopt用法</h1><p>在运行程序的时候可能会需要根据不同的条件，输入不同的命令行选项来实现程序不同的功能。Python为我们提供了getopt来实现选项的解析，从而执行不同的选项实现程序。在Python中支持短选项和长选项两种格式。短选项格式为”-“加上单个字母，长选项格式为”–”加上一个单词。</p>
+<h2 id="取得命令行参数"><a href="#取得命令行参数" class="headerlink" title="取得命令行参数"></a>取得命令行参数</h2><p>在此我们就要使用刚才说到的sys.argv命令了。在python中创建test.py文件，并写入：<br><code>import os<br>print sys.argv</code></p>
+<p>然后在terminal中写下任意参数，如：<br><code>python test.py -o input -h output –help me file1 file2</code><br>其结果为：<br><code>[‘test.py’, ‘-o’,’input’,’-h’,’output’,’–help’,’me’,’file1’,’file2’]</code><br>所有命令行都以空格为分隔符，保存在了sys.argv列表中。其中第一个元素为文件的路径。</p>
+<h2 id="选项的写法要求"><a href="#选项的写法要求" class="headerlink" title="选项的写法要求"></a>选项的写法要求</h2><p>对于短选项：’-‘后紧跟一个选项字母，如果有附加的参数则可紧跟在选项字母后，也可用空格与选项字母隔开。参数的长度不限，可以使用引号。个人比较喜欢空格后接参数的写法，一目了然。下面列举一些正确的写法：<br><code>-o<br>-oa<br>-oaaaa<br>-o aaaa<br>-o “abcd”</code><br>对于长选项，在”- -“后则需紧跟一个单词。若还有附加参数，则需在选项后紧跟一个”=”，再加上参数。注意：”=”号前后都不能有空格。正确的写法如下：<br><code>–help=inputfile</code></p>
+<h2 id="运用getopt解析命令行"><a href="#运用getopt解析命令行" class="headerlink" title="运用getopt解析命令行"></a>运用getopt解析命令行</h2><p>运用getopt解析命令行大致分为三步：</p>
+<ul>
+<li>引入getopt，sys模块</li>
+<li>分析命令行参数</li>
+<li><p>处理解析结果<br>还是上代码吧。<br>第一步：<br><pre><code>import sys, getopt<br>argv=sys.argv[1:]<br></code></pre><br>此处另argv变量为命令行参数list,去掉第一个参数（文件路径）这样可以方便处理命令参数<br>第二步：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">try:</div><div class="line">	opts,args=getopt.getopt(argv,&quot;h:o&quot;,[&quot;ifile=&quot;,&quot;ofile&quot;])</div><div class="line">except getopt.GetoptError:</div><div class="line">	print &quot;Get Error&quot;</div><div class="line">	sys.exit(2) # 发生错误则输出Get Error后退出程序</div></pre></td></tr></table></figure>
+</li>
+<li><p>此处处理程序的函数为getopt(),因为是直接使用import导入了getopt模块，因此要限定函数为getopt函数。</p>
+</li>
+<li>使用短选项分析字符串”h:o”。在”h”后加入”:”号表示h后应附带一个参数。而”o”后没有引号则表示此选项只是一个开关，当出现此选项时开关打开。</li>
+<li>使用长选项分析字符串[“ifile=”,”ofile”]。同理，长选项后跟等号表示该选项后带有一个参数，若不带参数则会返回错误。长选项没有带等号则表示该选项为一个开关</li>
+<li>使用getopt函数会返回两个list：opts和args。opts是分析出的格式信息，是一个两元组的列表，每个元素为（选项，附加参数）。如果没有附加参数，则附加参数项为空。args为不属于格式信息的剩余命令行参数。<br>若在terminal中执行：<br><pre><code>python test.py -h t -o –ifile=out –ofile file1 file2</code></pre><br>则解析完成后后opts为：<br>[(‘-h’,’t’),(‘-o’,’’),(‘–ifile’,’out’),(‘–ofile’,’’)]<br>args为：<br>[‘file1’,’file2’]<br>第三步：主要是判断解析出的参数是否存在，若存在再做进一步处理。<br><pre><code><br>for opt,arg in opts:<br>  if opt==’-h’:<pre><code>a=arg
+print a
+</code></pre>  if opt==’–ifile’:<pre><code>b=arg
+print b
+</code></pre>  if opt in (‘-o’,’-ofile’):<pre><code>output=c
+</code></pre></code></pre><br>在这里使用循环，每次从opts中抽取一个两元组，赋给opt和arg。若满足opt的条件则进行相应处理。<h1 id="getopt应用实例"><a href="#getopt应用实例" class="headerlink" title="getopt应用实例"></a>getopt应用实例</h1>有两个文件，如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">File1:</div><div class="line"># The first comment line of file 1</div><div class="line">The header of file 1</div><div class="line">The first content line of file 1</div><div class="line"># The second comment line of file 1</div><div class="line">File 2:</div><div class="line"># The first comment line of file 2</div><div class="line">The header of file 2</div><div class="line">The first content line of file 2</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>连接两个文件，在这里提供两个参数来对连接的内容进行设置：’-c’去掉两文件中的注释行，一般以特殊字母为开头，如’#’。若出现’-c’参数，则去掉注释行；若’-c’不出现则不会去掉程序的注释行。’-H’参数。此参数是为两文件的Header而设置的。若出现’-H’参数，则检查两文件是否有相同的header,如果有相同的header则只保留第一个文件的header。若’-H’不出现，则不会对文件header进行修改。<br>命令行表达式为：</p>
+<p><pre><code>python contatenateFiles.py -1 <inputfile 1=""> -2 <inputfile 2=""> -o <outputfile> -c <string> -H</string></outputfile></inputfile></inputfile></code></pre><br>若我们在terminal中运行以下程序：</p>
+<p><pre><code>contatenateFiles.py -1 inputfile1 -2 inputfile2 -o outputfile</code></pre><br>则我们会得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># The first comment line of file 1</div><div class="line">The header of file 1</div><div class="line">The first content line of file 1</div><div class="line"># The second comment line of file 1</div><div class="line"># The first comment line of file 2</div><div class="line">The header of file 2</div><div class="line">The first content line of file 2</div></pre></td></tr></table></figure></p>
+<p>若我们运行以下程序：</p>
+<p><pre><code>contatenateFiles.py -1 inputfile1 -2 inputfile2 -o outputfile -c “#” -H</code></pre><br>则我们会得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">The header of file 1</div><div class="line">The first content line of file 1</div><div class="line">The first content line of file 2</div></pre></td></tr></table></figure></p>
+<p>具体实现程序如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"># python 2.7.12</div><div class="line"># Firstly, change direction to the working direction in terminal</div><div class="line"># Then, the command in terminal should be like &apos;python contatenateFiles.py -1 inputfile1.txt -2 inputfile2.txt -o outputfile.txt -c &quot;#&quot; -H&apos;</div><div class="line">import sys, getopt</div><div class="line">argv = sys.argv[1:]</div><div class="line">inputfile = &apos;&apos;</div><div class="line">outputfile = &apos;&apos;</div><div class="line">header=False</div><div class="line">comment=&apos;&apos;</div><div class="line">try:</div><div class="line">    opts,args= getopt.getopt(argv,&quot;1:2:o:c:H&quot;) # parse command line</div><div class="line">except getopt.GetoptError:</div><div class="line">    print &quot;getopt error&quot;</div><div class="line">    sys.exit(2)</div><div class="line">for opt,arg in opts:</div><div class="line">    if opt == &apos;-1&apos;:</div><div class="line">        inputfile1=open(arg,&quot;r&quot;)</div><div class="line">        list1=list()</div><div class="line">        for line in inputfile1:</div><div class="line">            list1.append(line)</div><div class="line">    elif opt==&apos;-2&apos;:</div><div class="line">        inputfile2=open(arg,&quot;r&quot;)</div><div class="line">        list2=list()</div><div class="line">        for line in inputfile2:</div><div class="line">            list2.append(line)</div><div class="line">    elif opt==&apos;-o&apos;:</div><div class="line">        outputfile=open(arg,&apos;w&apos;)</div><div class="line">    elif opt==&apos;-c&apos;:</div><div class="line">        comment=arg</div><div class="line">    elif opt==&apos;-H&apos;:</div><div class="line">        header=True</div><div class="line">for line in list1:  # write data to outputfile</div><div class="line">    if line.split(&apos; &apos;)[0]==comment:</div><div class="line">        continue</div><div class="line">    else:</div><div class="line">        outputfile.write(line)</div><div class="line">firstline=0</div><div class="line">for line in list2:</div><div class="line">    if line.split(&apos; &apos;)[0]==comment:</div><div class="line">        continue</div><div class="line">    elif firstline=0 and header==True:</div><div class="line">    	firstline=1</div><div class="line">        continue</div><div class="line">    else:</div><div class="line">        outputfile.write(line)</div><div class="line">outputfile.close()</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/Command-Line/" rel="tag">#Command Line</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/30/数据标准化与正态化/" rel="next" title="数据标准化与正态化">
+                <i class="fa fa-chevron-left"></i> 数据标准化与正态化
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/08/Windows下Spark环境搭建/" rel="prev" title="Windows下Spark环境搭建">
+                Windows下Spark环境搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/16/sys-argv及getopt在Python中的用法/"
+     data-title="sys.argv及getopt在Python中的用法"
+     data-content=""
+     data-url="http://yoursite.com/2016/10/16/sys-argv及getopt在Python中的用法/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/16/sys-argv及getopt在Python中的用法/"
+           data-title="sys.argv及getopt在Python中的用法" data-url="http://yoursite.com/2016/10/16/sys-argv及getopt在Python中的用法/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/mai1.jpg"
+               alt="Candice" />
+          <p class="site-author-name" itemprop="name">Candice</p>
+          <p class="site-description motion-element" itemprop="description">Record my life and study.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/Candicezeng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2238235952" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/fangyiwen.zeng" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sys-argv的用法"><span class="nav-number">1.</span> <span class="nav-text">sys.argv的用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#getopt用法"><span class="nav-number">2.</span> <span class="nav-text">getopt用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#取得命令行参数"><span class="nav-number">2.1.</span> <span class="nav-text">取得命令行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选项的写法要求"><span class="nav-number">2.2.</span> <span class="nav-text">选项的写法要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运用getopt解析命令行"><span class="nav-number">2.3.</span> <span class="nav-text">运用getopt解析命令行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#getopt应用实例"><span class="nav-number">3.</span> <span class="nav-text">getopt应用实例</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Candice</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"candicezeng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+  
+
+  
+
+</body>
+</html>
