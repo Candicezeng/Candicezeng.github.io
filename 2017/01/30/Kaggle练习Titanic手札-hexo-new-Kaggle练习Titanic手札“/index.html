@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Spark," />
+  <meta name="keywords" content="python实战练习," />
 
 
 
@@ -84,25 +84,23 @@
 
 
 
-<meta name="description" content="最近在听Berkeley的介绍Apache Spark课程，所以就在本地搭建了pySpark的环境，在此记录在Windows下Spark环境搭建过程。Berkeley CS105x Introduction to Apache Spark 传送门：CS105x">
+<meta name="description" content="背景描述Titannic是Kaggle上的入门练习比赛。是非常好的机器学习入门级比赛。比赛相关信息：https://www.kaggle.com/c/titanic新手参加比赛后，可以根据网站的提示信息和贡献者们所写的Kernels来完成比赛。Kaggle非常适合新手入门机器学习，楼主也要在此多练习呀！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows下Spark环境搭建">
-<meta property="og:url" content="http://yoursite.com/2016/11/08/Windows下Spark环境搭建/index.html">
+<meta property="og:title" content="Kaggle练习Titanic:Machine Learning from Disaster  hexo new Kaggle练习Titanic手札“">
+<meta property="og:url" content="http://yoursite.com/2017/01/30/Kaggle练习Titanic手札-hexo-new-Kaggle练习Titanic手札“/index.html">
 <meta property="og:site_name" content="Candice">
-<meta property="og:description" content="最近在听Berkeley的介绍Apache Spark课程，所以就在本地搭建了pySpark的环境，在此记录在Windows下Spark环境搭建过程。Berkeley CS105x Introduction to Apache Spark 传送门：CS105x">
-<meta property="og:image" content="http://yoursite.com/images/build spark/jdkdownload.png">
-<meta property="og:image" content="http://yoursite.com/images/build spark/environmentalvariables.png">
-<meta property="og:image" content="http://yoursite.com/images/build spark/JAVA_HOME.png">
-<meta property="og:image" content="http://yoursite.com/images/build spark/classpath.png">
-<meta property="og:image" content="http://yoursite.com/images/build spark/spark.png">
-<meta property="og:image" content="http://yoursite.com/images/build spark/sparkhome.png">
-<meta property="og:image" content="http://yoursite.com/images/build spark/hadoop.png">
-<meta property="og:image" content="http://yoursite.com/images/build spark/path.png">
-<meta property="og:updated_time" content="2016-11-09T00:18:50.000Z">
+<meta property="og:description" content="背景描述Titannic是Kaggle上的入门练习比赛。是非常好的机器学习入门级比赛。比赛相关信息：https://www.kaggle.com/c/titanic新手参加比赛后，可以根据网站的提示信息和贡献者们所写的Kernels来完成比赛。Kaggle非常适合新手入门机器学习，楼主也要在此多练习呀！">
+<meta property="og:image" content="http://yoursite.com/images/titanic/sex.png">
+<meta property="og:image" content="http://yoursite.com/images/titanic/pclass.png">
+<meta property="og:image" content="http://yoursite.com/images/titanic/age.png">
+<meta property="og:image" content="http://yoursite.com/images/titanic/fare.png">
+<meta property="og:image" content="http://yoursite.com/images/titanic/embarked.png">
+<meta property="og:image" content="http://yoursite.com/images/titanic/model1.png">
+<meta property="og:updated_time" content="2017-01-30T15:13:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows下Spark环境搭建">
-<meta name="twitter:description" content="最近在听Berkeley的介绍Apache Spark课程，所以就在本地搭建了pySpark的环境，在此记录在Windows下Spark环境搭建过程。Berkeley CS105x Introduction to Apache Spark 传送门：CS105x">
-<meta name="twitter:image" content="http://yoursite.com/images/build spark/jdkdownload.png">
+<meta name="twitter:title" content="Kaggle练习Titanic:Machine Learning from Disaster  hexo new Kaggle练习Titanic手札“">
+<meta name="twitter:description" content="背景描述Titannic是Kaggle上的入门练习比赛。是非常好的机器学习入门级比赛。比赛相关信息：https://www.kaggle.com/c/titanic新手参加比赛后，可以根据网站的提示信息和贡献者们所写的Kernels来完成比赛。Kaggle非常适合新手入门机器学习，楼主也要在此多练习呀！">
+<meta name="twitter:image" content="http://yoursite.com/images/titanic/sex.png">
 
 
 
@@ -123,9 +121,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/08/Windows下Spark环境搭建/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/30/Kaggle练习Titanic手札-hexo-new-Kaggle练习Titanic手札“/"/>
 
-  <title> Windows下Spark环境搭建 | Candice </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Kaggle练习Titanic:Machine Learning from Disaster  hexo new Kaggle练习Titanic手札“ | Candice </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +253,7 @@
             
             
               
-                Windows下Spark环境搭建
+                Kaggle练习Titanic:Machine Learning from Disaster  hexo new Kaggle练习Titanic手札“
               
             
           </h1>
@@ -267,8 +265,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-08T17:33:00+08:00" content="2016-11-08">
-              2016-11-08
+            <time itemprop="dateCreated" datetime="2017-01-30T21:12:38+08:00" content="2017-01-30">
+              2017-01-30
             </time>
           </span>
 
@@ -281,8 +279,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Spark/" itemprop="url" rel="index">
-                    <span itemprop="name">Spark</span>
+                  <a href="/categories/python实战练习/" itemprop="url" rel="index">
+                    <span itemprop="name">python实战练习</span>
                   </a>
                 </span>
 
@@ -297,8 +295,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/08/Windows下Spark环境搭建/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/08/Windows下Spark环境搭建/" itemprop="commentsCount"></span>
+                <a href="/2017/01/30/Kaggle练习Titanic手札-hexo-new-Kaggle练习Titanic手札“/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/30/Kaggle练习Titanic手札-hexo-new-Kaggle练习Titanic手札“/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -326,17 +324,25 @@
       
 
       
-        <p>最近在听Berkeley的介绍Apache Spark课程，所以就在本地搭建了pySpark的环境，在此记录在Windows下Spark环境搭建过程。<br>Berkeley CS105x Introduction to Apache Spark 传送门：<a href="https://courses.edx.org/courses/course-v1%3ABerkeleyX%2BCS105x%2B1T2016/" target="_blank" rel="external">CS105x</a><br><a id="more"></a></p>
-<p>我搭建的环境为：windows10+spark2.0.1+python 2.7。</p>
-<h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p>安装spark的第一步就是安装jdk，spark依赖于jdk执行。jdk可在oracle官网上下载，下载传送门<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK</a><br><img src="/images/build spark/jdkdownload.png" alt="jkd下载"><br>在这里我选择的Windows x64版本，你可根据自己的需求下载。下载完成后选择安装路径安装就好。在此，我直接选择默认路径安装，即C:\Program Files\Java。安装好后就需要设置环境变量了。依次打开system–&gt;Advanced system setting-<br>-&gt;Advanced-&gt;Environment Variable<br><img src="/images/build spark/environmentalvariables.png" alt="Environment Variables"><br>添加两个环境变量：<br>JAVA_HOME：<img src="/images/build spark/JAVA_HOME.png" alt="javahome"><br>CLASSPATH：<img src="/images/build spark/classpath.png" alt="classpath"><br>然后打开PATH,添加</p>
-<p><pre><code>%JAVA_HOME%\bin</code></pre><br>然后打开cmd窗口，执行：</p>
-<p><pre><code>java -version</code></pre><br>出现java的版本信息则安装成功了。</p>
-<h1 id="安装Spark"><a href="#安装Spark" class="headerlink" title="安装Spark"></a>安装Spark</h1><p>去Spark官网下载spark，传送门<a href="http://spark.apache.org/downloads.html" target="_blank" rel="external">SPARK</a><br>在此我选择的是spark2.0.1，其对应Hadoop的版本为Hadoop2.7版本及以后。<br><img src="/images/build spark/spark.png" alt="spark"><br>下载完成后解压缩到你想要放的位置，我直接将Spark放在了C盘下。然后添加Spark环境变量。<br><img src="/images/build spark/sparkhome.png" alt="sparkhome"><br>在path中添加：</p>
-<p><pre><code>%SPARK_HOME%\bin<br>%SPARK_HOME%\sbin</code></pre></p>
-<h1 id="安装hadoop"><a href="#安装hadoop" class="headerlink" title="安装hadoop"></a>安装hadoop</h1><p>下载安装hadoop，传送门<a href="https://github.com/steveloughran/winutils" target="_blank" rel="external">Hadoop</a><br>在此我选择的是Hadoop 2.7.1，以对应我的spark版本。下载完成后解压缩，添加环境变量HADOOP_HOME。如下：<br><img src="/images/build spark/hadoop.png" alt="hadoop"><br>在path中添加：</p>
-<p><pre><code>%HADOOP_HOME%\bin</code></pre><br>在此为了避免出现问题，我还安装了scala，同时添加了SCALA_HOME环境变量，并在path中添加了%SCALA_HOME%\bin，在此就不赘述了。<br>在path中总共添加的信息如下：<br><img src="/images/build spark/path.png" alt="path"></p>
-<h1 id="pyspark设置"><a href="#pyspark设置" class="headerlink" title="pyspark设置"></a>pyspark设置</h1><p>将spark目录下的pyspark文件夹复制到python安装目录..\Python27\Lib\sit-packages里面.<br>在python环境运行pip install py4j.</p>
-<p>安装完成！在pycharm中开始编程吧！</p>
+        <h1 id="背景描述"><a href="#背景描述" class="headerlink" title="背景描述"></a>背景描述</h1><p>Titannic是Kaggle上的入门练习比赛。是非常好的机器学习入门级比赛。<br>比赛相关信息：<a href="https://www.kaggle.com/c/titanic" target="_blank" rel="external">https://www.kaggle.com/c/titanic</a><br>新手参加比赛后，可以根据网站的提示信息和贡献者们所写的Kernels来完成比赛。Kaggle非常适合新手入门机器学习，楼主也要在此多练习呀！<br><a id="more"></a></p>
+<p>#数据描述<br>Titanic练习赛的目的在于预测乘客是否存活，给定的特征如下：</p>
+<p><pre><code><br>VARIABLE DESCRIPTIONS:<br>survival        Survival<br>                (0 = No; 1 = Yes)<br>pclass          Passenger Class<br>                (1 = 1st; 2 = 2nd; 3 = 3rd)<br>name            Name<br>sex             Sex<br>age             Age<br>sibsp           Number of Siblings/Spouses Aboard<br>parch           Number of Parents/Children Aboard<br>ticket          Ticket Number<br>fare            Passenger Fare<br>cabin           Cabin<br>embarked        Port of Embarkation<br>                (C = Cherbourg; Q = Queenstown; S = Southampton)</code></pre></p>
+<p>SPECIAL NOTES:<br>Pclass is a proxy for socio-economic status (SES)<br> 1st ~ Upper; 2nd ~ Middle; 3rd ~ Lower</p>
+<p>Age is in Years; Fractional if Age less than One (1)<br> If the Age is Estimated, it is in the form xx.5</p>
+<p>With respect to the family relation variables (i.e. sibsp and parch)<br>some relations were ignored.  The following are the definitions used<br>for sibsp and parch.</p>
+<p>Sibling:  Brother, Sister, Stepbrother, or Stepsister of Passenger Aboard Titanic<br>Spouse:   Husband or Wife of Passenger Aboard Titanic (Mistresses and Fiances Ignored)<br>Parent:   Mother or Father of Passenger Aboard Titanic<br>Child:    Son, Daughter, Stepson, or Stepdaughter of Passenger Aboard Titanic</p>
+<p>Other family relatives excluded from this study include cousins,<br>nephews/nieces, aunts/uncles, and in-laws.  Some children travelled<br>only with a nanny, therefore parch=0 for them.  As well, some<br>travelled with very close friends or neighbors in a village, however,<br>the definitions do not support such relations.<br><br>数据格式为csv格式，运用Python的pandas来解析数据：</p>
+<p><pre><code>train=pd.read_csv(“train.csv”)<br>test=pd.read_csv(“test.csv”)<br>full=pd.concat([train,test],ignore_index=True)<br></code></pre></p>
+<h1 id="特征分析与选择"><a href="#特征分析与选择" class="headerlink" title="特征分析与选择"></a>特征分析与选择</h1><p>由于Cabin这个变量中存在着太多的缺失值，因此先不考虑该特征。</p>
+<h2 id="特征分析"><a href="#特征分析" class="headerlink" title="特征分析"></a>特征分析</h2><h3 id="Sex"><a href="#Sex" class="headerlink" title="Sex"></a>Sex</h3><p>首先观察男女性别的存活率<br><img src="/images/titanic/sex.png" alt="sex"><br>女性的存活率要明显高于男性。男性的存活率只有18%左右，而女性的存活率达74%。</p>
+<h3 id="Pclass"><a href="#Pclass" class="headerlink" title="Pclass"></a>Pclass</h3><p>不同的舱位，所处的位置不一样，对逃生也有较大影响<br><img src="/images/titanic/pclass.png" alt="Pclass"><br>从图中可以看出，一等舱位存活率是最高的，超过60%的人存活了下来，三等舱位存活率是最低的。乘客的等级是相关特征。</p>
+<h3 id="Age"><a href="#Age" class="headerlink" title="Age"></a>Age</h3><p>在泰坦尼克号电影里，让老人和小孩先走，在此来看看存活下来最多的是哪个年龄的人<br><img src="/images/titanic/age.png" alt="Age"><br>在此，我没有分年龄段来观察存活率，若有兴趣可自行分组。从图中可以判断小孩的存活率是最高的。青壮年的人数虽然很多，但存活率很低。</p>
+<h3 id="Fare-per-class"><a href="#Fare-per-class" class="headerlink" title="Fare per class"></a>Fare per class</h3><p>一般价位越高的人所处舱位也越好，这些人也越容易获救<br><img src="/images/titanic/fare.png" alt="Fare"><br>果然舱位越好，费用也就越高！</p>
+<h3 id="Embarked"><a href="#Embarked" class="headerlink" title="Embarked"></a>Embarked</h3><p><img src="/images/titanic/embarked.png" alt="Embarked"><br>上船的港口编号和存活率也有紧密的联系，港口编号为C的乘客的存活率明显高于其他两个港口编号的乘客。</p>
+<h2 id="特征缺失"><a href="#特征缺失" class="headerlink" title="特征缺失"></a>特征缺失</h2><p>对于数据中存在的缺失值，运用均值来代替。这里需要注意的是分层计算均值，并插入适当的位置。<br>其他缺失值的处理方法有：1.直接舍弃这行数据（适用于缺失值很少且数据量很多的情况下）2.建立模型来学习出这个缺失值，比如运用KNN来拟合 </p>
+<h1 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h1><p>在原有特征的基础上，我提取出了票号信息，家庭成员人数，称呼三个特征，后又参考Kaggle上给的指南建立了Family_ID特征。删除掉了Name, Ticket, Cabin三个特征。</p>
+<h1 id="模型建立与调试"><a href="#模型建立与调试" class="headerlink" title="模型建立与调试"></a>模型建立与调试</h1><p>初步运用Randomforest, Gradient Boosting, AdaBoost，Bagging来尝试哪种模型得到的效果好。<br><img src="/images/titanic/model1.png" alt="model"><br>Gradient Boosting和Random Forest的效果较好，在此基础上绘制了feature importance图来选择最好的参数，并运用GridSearchCV来调整最佳参数，在此基础上，我将两个模型结合在一起来的到预测值，得到的最好结果大约在78%左右。<br>后受到Kaggle上tutorial的启发，加入了Logistic Regression模型，与Gradient Boosting一起运用得到的准确率为79.9%。不知如何才能进一步，上到80%。</p>
+<h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>由于数据量很小，再进行优化，准确率提升也很小，感觉意义不大。打算先多看看书，尝试尝试其他项目。</p>
 
       
     </div>
@@ -359,7 +365,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Spark/" rel="tag">#Spark</a>
+            <a href="/tags/python实战练习/" rel="tag">#python实战练习</a>
           
         </div>
       
@@ -368,17 +374,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/16/sys-argv及getopt在Python中的用法/" rel="next" title="sys.argv及getopt在Python中的用法">
-                <i class="fa fa-chevron-left"></i> sys.argv及getopt在Python中的用法
+              <a href="/2017/01/30/Hello-Hexo/" rel="next" title="Hello hexo">
+                <i class="fa fa-chevron-left"></i> Hello hexo
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/30/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -393,10 +395,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/08/Windows下Spark环境搭建/"
-     data-title="Windows下Spark环境搭建"
+        <div class="ds-share flat" data-thread-key="2017/01/30/Kaggle练习Titanic手札-hexo-new-Kaggle练习Titanic手札“/"
+     data-title="Kaggle练习Titanic:Machine Learning from Disaster  hexo new Kaggle练习Titanic手札“"
      data-content=""
-     data-url="http://yoursite.com/2016/11/08/Windows下Spark环境搭建/">
+     data-url="http://yoursite.com/2017/01/30/Kaggle练习Titanic手札-hexo-new-Kaggle练习Titanic手札“/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -423,8 +425,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/08/Windows下Spark环境搭建/"
-           data-title="Windows下Spark环境搭建" data-url="http://yoursite.com/2016/11/08/Windows下Spark环境搭建/">
+      <div class="ds-thread" data-thread-key="2017/01/30/Kaggle练习Titanic手札-hexo-new-Kaggle练习Titanic手札“/"
+           data-title="Kaggle练习Titanic:Machine Learning from Disaster  hexo new Kaggle练习Titanic手札“" data-url="http://yoursite.com/2017/01/30/Kaggle练习Titanic手札-hexo-new-Kaggle练习Titanic手札“/">
       </div>
     
   </div>
@@ -544,7 +546,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装JDK"><span class="nav-number">1.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Spark"><span class="nav-number">2.</span> <span class="nav-text">安装Spark</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装hadoop"><span class="nav-number">3.</span> <span class="nav-text">安装hadoop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pyspark设置"><span class="nav-number">4.</span> <span class="nav-text">pyspark设置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景描述"><span class="nav-number">1.</span> <span class="nav-text">背景描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征分析与选择"><span class="nav-number">2.</span> <span class="nav-text">特征分析与选择</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特征分析"><span class="nav-number">2.1.</span> <span class="nav-text">特征分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sex"><span class="nav-number">2.1.1.</span> <span class="nav-text">Sex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pclass"><span class="nav-number">2.1.2.</span> <span class="nav-text">Pclass</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Age"><span class="nav-number">2.1.3.</span> <span class="nav-text">Age</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fare-per-class"><span class="nav-number">2.1.4.</span> <span class="nav-text">Fare per class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embarked"><span class="nav-number">2.1.5.</span> <span class="nav-text">Embarked</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征缺失"><span class="nav-number">2.2.</span> <span class="nav-text">特征缺失</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征工程"><span class="nav-number">3.</span> <span class="nav-text">特征工程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型建立与调试"><span class="nav-number">4.</span> <span class="nav-text">模型建立与调试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结"><span class="nav-number">5.</span> <span class="nav-text">结</span></a></li></ol></div>
             
           </div>
         </section>

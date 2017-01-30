@@ -94,7 +94,7 @@ z_score标准化也叫标注差标准化，使经过处理的数据符合标准�
 <meta property="og:description" content="目的数据标准化的目的是使单位不统一的数据，转化到同一基准下，方便我们分析和建模。数据正态化的目的是稳定方差，使非正态的数据正态化或者接近正态分布。
 数据标准化数据的标准化的方法有很多，在此介绍以下几种：
 z_score标准化也叫标注差标准化，使经过处理的数据符合标准正态分布，即均值为0，标准差为1.其转化函数为：$$x^*=\frac{x-\mu}{\sigma}$$$\mu$为均值，$\sigm">
-<meta property="og:updated_time" content="2016-10-17T03:36:28.000Z">
+<meta property="og:updated_time" content="2017-01-30T13:23:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据标准化与正态化">
 <meta name="twitter:description" content="目的数据标准化的目的是使单位不统一的数据，转化到同一基准下，方便我们分析和建模。数据正态化的目的是稳定方差，使非正态的数据正态化或者接近正态分布。
@@ -329,8 +329,7 @@ z_score标准化也叫标注差标准化，使经过处理的数据符合标准�
 <h2 id="0-1标准化"><a href="#0-1标准化" class="headerlink" title="0-1标准化"></a>0-1标准化</h2><p>也叫离差标准化，是对原始数据的线性变换，使结果落入[0,1]区间，其转化函数为：<br>$$x^*=\frac{x-min}{max-min}$$<br>其中max为样本数据最大值，min为样本数据最小值。这种方法的缺点在于当加入新数据时，可能导致max和min发生变化，需要重新定义max和min。<br><a id="more"></a></p>
 <h2 id="中心化"><a href="#中心化" class="headerlink" title="中心化"></a>中心化</h2><p>利用数据集中的各项数据减去数据集的均值，其转化函数为：<br>$$x*=x-mean$$<br>其中mean为样本数据的均值。中心化后数据的均值将变为0。</p>
 <h2 id="小数定标规范化"><a href="#小数定标规范化" class="headerlink" title="小数定标规范化"></a>小数定标规范化</h2><p>通过移动数据的小数点位置进行规范化，小数点的移动位置依赖数据的最大值。由下式计算：<br>满足|max(A)|&lt;1的最小整数。<br>例如：<br>假设A的取值为-986 ~ 917，A的最大绝对值为986，使用小数定标规范化，用1000除以每个值，这样-986标准化为-0.986，917则为0.917.</p>
-<p>#数据正态化</p>
-<h2 id="Box-Cox-transformation-family"><a href="#Box-Cox-transformation-family" class="headerlink" title="Box-Cox transformation family"></a>Box-Cox transformation family</h2><p>假设{$$Y_1,Y_2,…,Y_n$$}是正观测变量。若其不为正，则加上一个整数使其变为正。(注意：这样会使观测变量的均值发生改变，但不会改变序列的方差和协方差）<br>Box-Cox Power Transformation Family:<br>$$<br>        Z_t^{(\lambda)} =<br>        \begin{cases}<br>        \frac{Y_t^\lambda-1}{\lambda},  &amp; \text{if $\lambda\neq$0} \\<br>        log(Y_t), &amp; \text{if $\lambda$=0}<br>        \end{cases}$$<br>This transformation family is continuous about $\lambda$</p>
+<h1 id="数据正态化"><a href="#数据正态化" class="headerlink" title="数据正态化"></a>数据正态化</h1><h2 id="Box-Cox-transformation-family"><a href="#Box-Cox-transformation-family" class="headerlink" title="Box-Cox transformation family"></a>Box-Cox transformation family</h2><p>假设{$$Y_1,Y_2,…,Y_n$$}是正观测变量。若其不为正，则加上一个整数使其变为正。(注意：这样会使观测变量的均值发生改变，但不会改变序列的方差和协方差）<br>Box-Cox Power Transformation Family:<br>$$<br>        Z_t^{(\lambda)} =<br>        \begin{cases}<br>        \frac{Y_t^\lambda-1}{\lambda},  &amp; \text{if $\lambda\neq$0} \\<br>        log(Y_t), &amp; \text{if $\lambda$=0}<br>        \end{cases}$$<br>This transformation family is continuous about $\lambda$</p>
 <h3 id="Box-Cox常见变换"><a href="#Box-Cox常见变换" class="headerlink" title="Box-Cox常见变换"></a>Box-Cox常见变换</h3><ul>
 <li>$\lambda$=0时,为对数变换</li>
 <li>$\lambda$=0.5时为平方根变换</li>
@@ -480,7 +479,7 @@ z_score标准化也叫标注差标准化，使经过处理的数据符合标准�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -488,7 +487,7 @@ z_score标准化也叫标注差标准化，使经过处理的数据符合标准�
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -497,7 +496,7 @@ z_score标准化也叫标注差标准化，使经过处理的数据符合标准�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -555,7 +554,7 @@ z_score标准化也叫标注差标准化，使经过处理的数据符合标准�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据标准化"><span class="nav-number">2.</span> <span class="nav-text">数据标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#z-score标准化"><span class="nav-number">2.1.</span> <span class="nav-text">z_score标准化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-1标准化"><span class="nav-number">2.2.</span> <span class="nav-text">0-1标准化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中心化"><span class="nav-number">2.3.</span> <span class="nav-text">中心化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小数定标规范化"><span class="nav-number">2.4.</span> <span class="nav-text">小数定标规范化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Box-Cox-transformation-family"><span class="nav-number">2.5.</span> <span class="nav-text">Box-Cox transformation family</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Box-Cox常见变换"><span class="nav-number">2.5.1.</span> <span class="nav-text">Box-Cox常见变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何选择合适的变换"><span class="nav-number">2.5.2.</span> <span class="nav-text">如何选择合适的变换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据标准化"><span class="nav-number">2.</span> <span class="nav-text">数据标准化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#z-score标准化"><span class="nav-number">2.1.</span> <span class="nav-text">z_score标准化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-1标准化"><span class="nav-number">2.2.</span> <span class="nav-text">0-1标准化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中心化"><span class="nav-number">2.3.</span> <span class="nav-text">中心化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小数定标规范化"><span class="nav-number">2.4.</span> <span class="nav-text">小数定标规范化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据正态化"><span class="nav-number">3.</span> <span class="nav-text">数据正态化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Box-Cox-transformation-family"><span class="nav-number">3.1.</span> <span class="nav-text">Box-Cox transformation family</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Box-Cox常见变换"><span class="nav-number">3.1.1.</span> <span class="nav-text">Box-Cox常见变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何选择合适的变换"><span class="nav-number">3.1.2.</span> <span class="nav-text">如何选择合适的变换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">4.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
           </div>
         </section>
